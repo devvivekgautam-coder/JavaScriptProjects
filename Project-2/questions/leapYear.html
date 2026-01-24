@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap Year</title>
+</head>
+<body style="text-align: center;">
+    <h1>Leap Year</h1>
+
+    <h2 id="startYear"></h2>
+    <h2 id="endYear"></h2>
+    <h2 id="leapYear"></h2>
+
+    <script>
+        let startYear = Number(prompt("Enter Start Year : "));
+        document.getElementById("startYear").innerText = `Start Year : ${startYear}`;
+
+        let endYear = Number(prompt("Enter End Year : "));
+        document.getElementById("endYear").innerText = `End Year : ${endYear}`;
+
+        for (let i = startYear; i <= endYear; i++) {
+            if ((i % 100 && i % 4 == 0) ||(i % 400 == 0))  {
+                document.getElementById("leapYear").innerHTML += `${i} <br>`;
+            }
+        }
+    </script>
+</body>
+</html>

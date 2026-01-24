@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body style="text-align: center;">
+    <h1>Table</h1>
+
+    <h2 id="num"></h2>
+    <h2 id="table"></h2>
+
+    <script>
+        let num = Number(prompt("Enter Any Number To Find Table : "));
+        document.getElementById("num").innerText = `Number : ${num}`;
+
+        for (let i = 1; i <= 10; i++) {
+            let tab = num * i;
+            document.getElementById("table").innerHTML += `${num} x ${i} = ${tab} <br>`;
+        }
+    </script>
+</body>
+</html>
