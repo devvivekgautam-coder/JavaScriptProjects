@@ -9,10 +9,29 @@ body {
     font-family: 'Segoe UI', sans-serif;
     overflow: hidden;
     color: white;
+    position: relative;
+    overflow-x: hidden;
     background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 }
 
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+#animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
 .main-section {
+    position: relative;
+    z-index: 1;
     padding: 80px 0;
 }
 
@@ -44,6 +63,8 @@ body {
     background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
     box-shadow: 0 15px 30px rgba(0, 0, 0, .5);
     overflow: hidden;
+    z-index: 2;
+    position: relative;
     transition: .35s ease;
 }
 
