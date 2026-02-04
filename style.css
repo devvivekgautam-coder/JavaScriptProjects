@@ -63,7 +63,7 @@ body {
   box-shadow: 6px 6px 0px black;
   color: black;
   font-weight: bold;
-  transition: all 0.1s;
+  transition: all 0.3s linear;
 }
 
 .get-project a:hover {
