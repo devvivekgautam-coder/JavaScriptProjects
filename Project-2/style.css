@@ -1,89 +1,103 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-surface: #2d3436; 
+  --card-base: #353b48;
+  --steel-light: #718093;
+  --accent-blue: #00a8ff;
+  --text-main: #f5f6fa;
+  --shadow-dark: #1e2229;
+  --shadow-light: #444b59;
 }
 
 body {
-    min-height: 100vh;
-    font-family: 'Segoe UI', sans-serif;
-    color: white;
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  background-color: var(--bg-surface);
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-main);
+  padding: 40px 20px;
 }
 
-.container {
-    position: relative;
-    z-index: 2;
+h1 {
+  font-weight: 700;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: -1px -1px 0px var(--shadow-dark), 1px 1px 0px var(--shadow-light);
+  margin-bottom: 50px !important;
 }
 
-#animated-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
+.get-project {
+  background: var(--card-base);
+  padding: 40px 25px;
+  border-radius: 15px;
+  border: 1px solid #485460;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 
+    12px 12px 24px var(--shadow-dark), 
+    -8px -8px 16px var(--shadow-light);
 }
 
-.main-section {
-    position: relative;
-    z-index: 1;
-    padding: 80px 0;
+.get-project:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    18px 18px 30px #181b21, 
+    -10px -10px 20px #4e5666;
 }
 
-.title {
-    text-align: center;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, .6);
+.get-project h4 {
+  background: linear-gradient(180deg, #4b5462 0%, #2f3640 100%);
+  color: var(--accent-blue);
+  padding: 10px 24px;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 1rem;
+  border: 1px solid var(--shadow-dark);
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,0.1);
 }
 
-.project-sec {
-    margin-top: 50px;
-    padding: 40px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 30px 70px rgba(0, 0, 0, .5);
+.get-project p {
+  background-color: #1e272e;
+  color: #dcdde1;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  border: 2px solid #2f3640;
+  box-shadow: 
+    inset 4px 4px 10px #0c1013, 
+    inset -2px -2px 5px #2f3640;
 }
 
-.pro-btn {
-    position: relative;
-    display: block;
-    padding: 18px;
-    margin: 20px 0;
-    border-radius: 14px;
-    color: white;
-    text-decoration: none;
-    font-size: 1.3rem;
-    background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, .5);
-    overflow: hidden;
-    z-index: 2;
-    position: relative;
-    transition: .35s ease;
+.get-project a {
+  background: linear-gradient(145deg, #404b5a, #2c333d);
+  display: inline-block;
+  text-decoration: none;
+  padding: 14px 40px;
+  border-radius: 30px;
+  color: var(--text-main);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border: 1px solid #1e272e;
+  box-shadow: 
+    5px 5px 10px var(--shadow-dark),
+    -2px -2px 5px var(--shadow-light);
 }
 
-.pro-btn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(120deg, #ffffff44, transparent, transparent);
-    transform: translateX(-100%);
-    transition: .5s;
+.get-project a:hover {
+  color: var(--accent-blue);
+  background: linear-gradient(145deg, #445163, #323a46);
 }
 
-.pro-btn:hover::before {
-    transform: translateX(100%);
-}
-
-.pro-btn:hover {
-    color: black;
-    transform: translateY(-5px) scale(1.01) rotateX(8deg);
-    background-image: linear-gradient(to top, #1767e0, #0091f9, #00b4f6, #00d2e0, #12ebc5);
-    box-shadow: 0 0 20px #00f0ff, 0 25px 50px rgba(0, 0, 0, .6);
+.get-project a:active {
+  box-shadow: 
+    inset 3px 3px 6px #181b21, 
+    inset -2px -2px 4px #444b59;
+  transform: translateY(2px);
 }
