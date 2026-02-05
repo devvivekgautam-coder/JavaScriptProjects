@@ -1,33 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Intrest</title>
+    <title>Simple Interest</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial Black, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+        }
+
+        .container {
+            background: #ffeb3b;
+            border: 4px solid #000;
+            padding: 30px;
+            width: 360px;
+            box-shadow: 8px 8px 0 #000;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 4px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            border: 3px solid #000;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #fff;
+            box-shadow: 4px 4px 0 #000;
+            font-size: 16px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Simple Intrest Calculater</h1>
-    <h2 id="principal"></h2>
-    <h2 id="rate"></h2>
-    <h2 id="time"></h2>
-    <h2 id="intrest"></h2>
-    <h2 id="amount"></h2>
+
+    <div class="container">
+        <h1>Simple Interest Calculator</h1>
+
+        <div class="box" id="principal"></div>
+        <div class="box" id="rate"></div>
+        <div class="box" id="time"></div>
+        <div class="box" id="interest"></div>
+        <div class="box" id="amount"></div>
+    </div>
 
     <script>
         let principal = Number(prompt("Enter Your Principal Amount : "));
-        document.getElementById("principal").innerText = `Principal Amount : ${principal}`;
+        document.getElementById("principal").innerText =
+            `Principal Amount : ₹${principal}`;
 
-        let rate = Number(prompt("Enter Rate : "));
-        document.getElementById("rate").innerText = `Rate Of Intrest : ${rate}`;
+        let rate = Number(prompt("Enter Rate of Interest (%) : "));
+        document.getElementById("rate").innerText =
+            `Rate of Interest : ${rate}%`;
 
-        let time = Number(prompt("Enter Time : "));
-        document.getElementById("time").innerText = `Time : ${time}`;
+        let time = Number(prompt("Enter Time (Years) : "));
+        document.getElementById("time").innerText =
+            `Time : ${time} Years`;
 
-        let intrest = (principal * rate * time) / 100;
-        document.getElementById("intrest").innerText = `Intrest : ${intrest}`
+        let interest = (principal * rate * time) / 100;
+        document.getElementById("interest").innerText =
+            `Simple Interest : ₹${interest.toFixed(2)}`;
 
-        let amount = principal + intrest;
-        document.getElementById("amount").innerText = `Total Amount : ${amount}`;
+        let amount = principal + interest;
+        document.getElementById("amount").innerText =
+            `Total Amount : ₹${amount.toFixed(2)}`;
     </script>
+
 </body>
+
 </html>

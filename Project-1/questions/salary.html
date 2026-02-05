@@ -1,38 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salary Management</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial Black, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+        }
+
+        .container {
+            background: #ffeb3b;
+            border: 4px solid #000;
+            padding: 30px;
+            width: 360px;
+            box-shadow: 8px 8px 0 #000;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 4px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            border: 3px solid #000;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #fff;
+            box-shadow: 4px 4px 0 #000;
+            font-size: 16px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Salary Management System</h1>
-    <h2 id="name"></h2>
-    <h2 id="salary"></h2>
-    <h2 id="HRA"></h2>
-    <h2 id="DA"></h2>
-    <h2 id="TA"></h2>
-    <h2 id="GS"></h2>
+
+    <div class="container">
+        <h1>Salary Management System</h1>
+
+        <div class="box" id="name"></div>
+        <div class="box" id="salary"></div>
+        <div class="box" id="HRA"></div>
+        <div class="box" id="DA"></div>
+        <div class="box" id="TA"></div>
+        <div class="box" id="GS"></div>
+    </div>
 
     <script>
         let name = prompt("Enter Your Name : ");
         document.getElementById("name").innerText = `Name : ${name}`;
 
         let salary = Number(prompt("Enter Your Salary : "));
-        document.getElementById("salary").innerText = `Salary : ${salary}`;
+        document.getElementById("salary").innerText = `Basic Salary : ₹${salary}`;
 
         let HRA = Number(prompt("Enter HRA (%) : "));
-        document.getElementById("HRA").innerText = `HRA ${HRA} %`;
+        document.getElementById("HRA").innerText = `HRA : ${HRA}%`;
 
         let DA = Number(prompt("Enter DA (%) : "));
-        document.getElementById("DA").innerText = `DA : ${DA} %`;
+        document.getElementById("DA").innerText = `DA : ${DA}%`;
 
-        let TA = Number(prompt("Enter TA (%) :"));
-        document.getElementById("TA").innerText = `TA : ${TA} %`;
+        let TA = Number(prompt("Enter TA (%) : "));
+        document.getElementById("TA").innerText = `TA : ${TA}%`;
 
-        let GS = salary + ((HRA * salary / 100) + (DA * salary / 100) + (TA * salary / 100)) * salary / 100;
-        document.getElementById("GS").innerText = `Gross Salary : ${GS}`;
+        let hraAmount = (HRA * salary) / 100;
+        let daAmount = (DA * salary) / 100;
+        let taAmount = (TA * salary) / 100;
 
+        let GS = salary + hraAmount + daAmount + taAmount;
+
+        document.getElementById("GS").innerText = `Gross Salary : ₹${GS.toFixed(2)}`;
     </script>
+
 </body>
+
 </html>

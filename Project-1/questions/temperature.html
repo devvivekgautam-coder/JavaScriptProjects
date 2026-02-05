@@ -1,21 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature Converter</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial Black, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+        }
+
+        .container {
+            background: #ffeb3b;
+            border: 4px solid #000;
+            padding: 30px;
+            width: 360px;
+            box-shadow: 8px 8px 0 #000;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 4px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            border: 3px solid #000;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #fff;
+            box-shadow: 4px 4px 0 #000;
+            font-size: 16px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Temperature Converter</h1>
-    <h2 id="temp"></h2>
-    <h2 id="newTemp"></h2>
+
+    <div class="container">
+        <h1>Temperature Converter</h1>
+
+        <div class="box" id="temp"></div>
+        <div class="box" id="newTemp"></div>
+    </div>
 
     <script>
-        let temp = Number(prompt("Enter The Temperature (In Celsius) : "));
-        document.getElementById("temp").innerText = `Temperature (In Celsius) : ${temp}`;
+        let temp = Number(prompt("Enter Temperature in Celsius : "));
+        document.getElementById("temp").innerText =
+            `Temperature (Cels) : ${temp}°C`;
 
-        let newTemp = (temp * (9 / 5) + 32);
-        document.getElementById("newTemp").innerText = `Temperature (In Fahrenheit) : ${newTemp}`;
+        let newTemp = (temp * 9 / 5) + 32;
+        document.getElementById("newTemp").innerText =
+            `Temperature (Fahr) : ${newTemp.toFixed(2)}°F`;
     </script>
+
 </body>
+
 </html>

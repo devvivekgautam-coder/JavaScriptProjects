@@ -1,28 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swap Number</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial Black, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+        }
+
+        .container {
+            background: #ffeb3b;
+            border: 4px solid #000;
+            padding: 30px;
+            width: 360px;
+            box-shadow: 8px 8px 0 #000;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 4px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            border: 3px solid #000;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #fff;
+            box-shadow: 4px 4px 0 #000;
+            font-size: 16px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Swap Number System</h1>
-    <h2 id="num1"></h2>
-    <h2 id="num2"></h2>
-    <h2 id="swap"></h2>
+
+    <div class="container">
+        <h1>Swap Number System</h1>
+
+        <div class="box" id="num1"></div>
+        <div class="box" id="num2"></div>
+        <div class="box" id="swap"></div>
+    </div>
 
     <script>
         let num1 = Number(prompt("Enter 1st Number : "));
-        document.getElementById("num1").innerText = `1st Num : ${num1}`;
+        document.getElementById("num1").innerText = `1st Number : ${num1}`;
 
         let num2 = Number(prompt("Enter 2nd Number : "));
-        document.getElementById("num2").innerText = `2nd Num : ${num2}`;
+        document.getElementById("num2").innerText = `2nd Number : ${num2}`;
 
         num1 = num1 + num2;
         num2 = num1 - num2;
         num1 = num1 - num2;
 
-        document.getElementById("swap").innerText = `Numbers After Swaping : ${num1} ${num2}`;
+        document.getElementById("swap").innerText =
+            `After Swapping : ${num1} : ${num2}`;
     </script>
+
 </body>
+
 </html>
