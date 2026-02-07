@@ -3,26 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leap Year</title>
-</head>
-<body style="text-align: center;">
-    <h1>Leap Year</h1>
+    <title>Leap Year Finder</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Arial Black', sans-serif;
+        }
 
-    <h2 id="startYear"></h2>
-    <h2 id="endYear"></h2>
-    <h2 id="leapYear"></h2>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #121212;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .neo-glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 4px solid #000;
+            box-shadow: 12px 12px 0px #000;
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 24px;
+            background: #00ffcc;
+            color: #000;
+            padding: 10px;
+            border: 4px solid #000;
+            margin-bottom: 20px;
+            box-shadow: 5px 5px 0px #000;
+            text-transform: uppercase;
+        }
+
+        .label-tag {
+            background: #000;
+            color: #00ffcc;
+            padding: 5px 10px;
+            font-size: 12px;
+            display: inline-block;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .display-box {
+            background: rgba(255, 255, 255, 0.9);
+            color: #000;
+            border: 3px solid #000;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            box-shadow: 4px 4px 0px #000;
+            min-height: 45px;
+        }
+
+        #leapYear {
+            background: #fff;
+            color: #000;
+            border: 4px solid #000;
+            margin-top: 10px;
+            padding: 15px;
+            font-size: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            box-shadow: 6px 6px 0px #000;
+            display: block;
+        }
+
+        #leapYear::-webkit-scrollbar { width: 8px; }
+        #leapYear::-webkit-scrollbar-thumb { background: #00ffcc; border: 2px solid #000; }
+    </style>
+</head>
+<body>
+
+    <div class="neo-glass-card">
+        <h1>Leap Year</h1>
+        
+        <div class="label-tag">Selected Range</div>
+        <div id="startYear" class="display-box">Start: --</div>
+        <div id="endYear" class="display-box">End: --</div>
+
+        <div class="label-tag" style="margin-top: 10px;">Found Years</div>
+        <div id="leapYear">Results will appear here...</div>
+    </div>
 
     <script>
         let startYear = Number(prompt("Enter Start Year : "));
-        document.getElementById("startYear").innerText = `Start Year : ${startYear}`;
-
         let endYear = Number(prompt("Enter End Year : "));
+
+        document.getElementById("startYear").innerText = `Start Year : ${startYear}`;
         document.getElementById("endYear").innerText = `End Year : ${endYear}`;
 
+        document.getElementById("leapYear").innerHTML = "";
+
+        let found = false;
         for (let i = startYear; i <= endYear; i++) {
-            if ((i % 100 && i % 4 == 0) ||(i % 400 == 0))  {
+            if ((i % 100 && i % 4 == 0) || (i % 400 == 0)) {
                 document.getElementById("leapYear").innerHTML += `${i} <br>`;
+                found = true;
             }
+        }
+
+        if(!found) {
+            document.getElementById("leapYear").innerText += `No leap year found in this range`;
         }
     </script>
 </body>
