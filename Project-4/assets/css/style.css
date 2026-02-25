@@ -1,0 +1,98 @@
+.productImage img {
+    width: 100%;
+}
+
+.productName h5 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.productName {
+    border: 1px solid #dfe3e8;
+    padding: 25px;
+}
+
+.ratings i {
+    color: #ffc107;
+    font-size: 20px;
+}
+
+.ratings span {
+    color: #495057;
+}
+
+.originalPrice {
+    color: #919eab;
+}
+
+.offer {
+    color: #cb0233;
+}
+
+.originalPrice, .offer {
+    font-size: 20px;
+}
+
+.like i {
+    font-size: 25px;
+    padding: 5px;
+    border: 1px solid #919eab;
+    margin-right: 10px;
+}
+
+.cartBtn {
+    background-color: #088178;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.cartBtn i{
+    font-size: 25px;
+}
+
+.cartBtn span{
+    font-size: 20px;
+}
+
+.cartBtn i, span {
+    color: white;
+}
+
+.productImage img {
+    border: 1px solid #495057;
+    background-color: #dfe3e8;
+}
+
+.supportContact span{
+    color: black !important;
+    display: block;
+}
+
+.supportIcon i {
+    color: black !important;
+    font-size: 30px;
+    margin-right: 10px;
+    padding: 8px;
+    background-color: #dfe3e8;
+    border-radius: 50%;
+}
+
+.navbar-brand {
+    font-size: 18px;
+    padding: 8px;
+    color: white;
+    background-color: #088178;
+    border-radius: 8px;
+}
+
+.dropdown-menu li a{
+    transition: all 0.4s linear;
+}
+
+.dropdown-menu li a:hover {
+    color: #088178 !important;
+}
+
+.navbar {
+    background-color: white;
+}

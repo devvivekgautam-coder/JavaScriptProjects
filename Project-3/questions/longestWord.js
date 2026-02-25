@@ -6,7 +6,7 @@ function longestWord(str) {
         if (str[i] !== " " && i !== str.length) {
             word += str[i];
         } 
-        else {
+          else {
             if (word.length > longest.length) {
                 longest = word;
             }
