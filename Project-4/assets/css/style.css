@@ -1,98 +1,178 @@
-.productImage img {
-    width: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
-.productName h5 {
-    margin-top: 10px;
-    font-size: 20px;
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fb;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    z-index: 999;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 8px 15px;
+    color: #fff;
+    background: linear-gradient(45deg, #088178, #0dcaf0);
+    border-radius: 30px;
+    transition: 0.3s linear;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.aboutProduct {
+    transition: 0.4s linear;
 }
 
 .productName {
-    border: 1px solid #dfe3e8;
-    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: 0.4s linear;
+    position: relative;
+    overflow: hidden;
+}
+
+.productName:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.productImage {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.productImage img {
+    width: 100%;
+    transition: 0.4s linear;
+}
+
+.productName:hover .productImage img {
+    transform: scale(1.08);
+}
+
+.productName h5 {
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: 500;
+    min-height: 48px;
 }
 
 .ratings i {
     color: #ffc107;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .ratings span {
-    color: #495057;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.discoundPrice strong {
+    font-size: 18px;
+    color: #088178;
 }
 
 .originalPrice {
-    color: #919eab;
+    margin-left: 5px;
+    color: #adb5bd;
 }
 
 .offer {
-    color: #cb0233;
+    display: block;
+    font-size: 14px;
+    color: #dc3545;
+    font-weight: 500;
 }
 
-.originalPrice, .offer {
-    font-size: 20px;
+.cardBottom {
+    margin-top: 15px;
 }
 
 .like i {
-    font-size: 25px;
-    padding: 5px;
-    border: 1px solid #919eab;
-    margin-right: 10px;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 50%;
+    border: 1px solid #dee2e6;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+
+.like i:hover {
+    background: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
 }
 
 .cartBtn {
-    background-color: #088178;
-    padding: 5px 10px;
-    margin-bottom: 10px;
+    background: linear-gradient(45deg, #088178, #0dcaf0);
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s linear;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.cartBtn i{
-    font-size: 25px;
-}
-
-.cartBtn span{
-    font-size: 20px;
-}
-
-.cartBtn i, span {
+.cartBtn span, .cartBtn i {
     color: white;
 }
 
-.productImage img {
-    border: 1px solid #495057;
-    background-color: #dfe3e8;
-}
-
-.supportContact span{
-    color: black !important;
-    display: block;
+.cartBtn:hover {
+    transform: scale(1.05);
 }
 
 .supportIcon i {
-    color: black !important;
-    font-size: 30px;
-    margin-right: 10px;
+    font-size: 28px;
     padding: 8px;
-    background-color: #dfe3e8;
+    background: #f1f3f5;
     border-radius: 50%;
 }
 
-.navbar-brand {
-    font-size: 18px;
-    padding: 8px;
-    color: white;
+.supportContact span {
+    display: block;
+    font-size: 14px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+.navbar .dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s linear;
+}
+
+.dropdown-item {
+    transition: all 0.3s linear;
+}
+
+.dropdown-item:hover {
     background-color: #088178;
-    border-radius: 8px;
+    color: white;
 }
 
-.dropdown-menu li a{
-    transition: all 0.4s linear;
-}
-
-.dropdown-menu li a:hover {
-    color: #088178 !important;
-}
-
-.navbar {
-    background-color: white;
+.navbar .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }

@@ -23,7 +23,7 @@ let products = [
 
     {
         id: 3,
-        name: "Digital Infrared Thermometer",
+        name: "Digital Thermometer",
         price: 27.49,
         oldPrice: 39.99,
         discount: "15% OFF",
@@ -42,7 +42,7 @@ let products = [
         reviews: 189,
         image: ""
     },
-
+ 
     {
         id: 5,
         name: "Nutravita Vitamin B12",
@@ -135,7 +135,7 @@ let products = [
 
 products.forEach((item, idx) => {
     document.getElementById("Product").innerHTML += `
-    <div class="col-4 my-4 justify-content-center align-items-center">
+    <div class="col-lg-3 col-md-6 my-4 justify-content-center align-items-center">
         <div class="aboutProduct">
             <div class="productName text-center">
                 <div class="productImage">
@@ -149,7 +149,7 @@ products.forEach((item, idx) => {
                 </div>
 
                 <span class="discoundPrice">
-                    <strong>${item.price}</strong>
+                    <strong>$${item.price}</strong>
                 </span>
 
                 <span class="originalPrice">
