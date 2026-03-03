@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sort Array</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 8px;
+            width: 250px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Bubble Sort</h2>
+
+    <input type="text" id="numbers" placeholder="Enter numbers (comma separated)">
+    <button onclick="sortNumbers()">Sort</button>
+
+    <div id="result"></div>
+
+    <script>
+        function bubbleSort(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        let temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+
+        function sortNumbers() {
+            let input = document.getElementById("numbers").value;
+
+            let arr = input.split(",").map(num => Number(num.trim()));
+
+            let sortedArray = bubbleSort(arr);
+
+            document.getElementById("result").innerText ="Sorted Array: " + sortedArray.join(", ");
+        }
+    </script>
+</body>
+
+</html>
