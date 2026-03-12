@@ -4,29 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 6 </title>
-    <link rel="stylesheet" href="./bootstrap.min.css">
-    <link rel="stylesheet" href="./style.css">
-
+    <title>Neobrutalist Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <section class="main-section">
-        <div class="container">
-            <h1 class="title">Coming Soon...</h1>
-            <div class="row project-sec">
-                <div class="col-md-6 text-center">
-                    
-                </div>
-
-                <div class="col-md-6 text-center">
-                    
-                </div>
-            </div>
+    <div class="container">
+        <div id="welcome-screen">
+            <h1>QUIZ TIME.</h1>
+            <input type="text" id="username" placeholder="ENTER NAME HERE...">
+            <button id="start-btn" class="neo-btn">START →</button>
         </div>
-    </section>
 
-    <script src="./script.js"></script>
+        <div id="countdown-screen" class="hide">
+            <h1 id="countdown">3</h1>
+        </div>
+
+        <div id="quiz-screen" class="hide">
+            <div class="top-bar">
+                <span>TIME: <span id="timer">10</span>s</span>
+            </div>
+            <h2 id="question"></h2>
+            <div id="options"></div>
+            <button id="next-btn" class="neo-btn">NEXT QUESTION</button>
+        </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
