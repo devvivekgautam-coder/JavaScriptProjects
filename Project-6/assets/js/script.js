@@ -11,6 +11,7 @@ let username = document.getElementById("username");
 
 let currentQuestion = 0;
 let timer;
+let score = 0;
 let timeLeft = 10;
 
 const questions = [
@@ -118,8 +119,6 @@ const questions = [
 
 startBtn.addEventListener("click", startQuiz);
 
-let score = 0;
-
 function startQuiz() {
     if (username.value.trim() === "") {
         alert("Please Enter Your Name to start the quiz!");
@@ -155,14 +154,18 @@ function showQuestion() {
         btn.innerText = option;
 
         btn.addEventListener("click", () => {
-            const isCorrect = (option === q.answer);
+            let isCorrect = (option === q.answer);
 
-            if (isCorrect) {
-                btn.classList.add("correct");
-                score++;
+            if (isCorrect === null) {
+                alert("Please Select Any Option!!!")
             } else {
-                btn.classList.add("incorrect");
-                highlightCorrectAnswer(q.answer);
+                if (isCorrect) {
+                    btn.classList.add("correct");
+                    score++;
+                } else {
+                    btn.classList.add("incorrect");
+                    highlightCorrectAnswer(q.answer);
+                }
             }
 
             disableOptions();
@@ -184,7 +187,10 @@ function startTimer() {
         if (timeLeft <= 0) {
             clearInterval(timer);
             disableOptions();
-            highlightCorrectAnswer(questions[currentQuestion].answer);
+
+            setTimeout(() => {
+                nextQuestion();
+            }, 1000);
         }
     }, 1000);
 }
